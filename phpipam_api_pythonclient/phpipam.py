@@ -2,7 +2,7 @@
 import requests
 import urllib
 import base64
-import rijndael
+from . import rijndael
 import json
 
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
