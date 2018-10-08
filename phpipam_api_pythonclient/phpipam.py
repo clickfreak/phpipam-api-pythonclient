@@ -89,20 +89,20 @@ class PHPIPAM:
             elif method == 'DELETE':
                 response = requests.delete(url, verify=False, allow_redirects=False, timeout=self.timeout)
             else:
-                print "Wrong method"
+                print("Wrong method")
                 return None
         except Exception as error:
-            print error
+            print(error)
             return None
 
         return json.loads(response.text.encode('utf8'))
 
     def generic(self, controller, method, **kwargs):
-        """Query PHPIPAM 
+        """Query PHPIPAM
 
         Parameters
             controller - string controller name
-               valid controller values = ["sections", "subnets", "addresses", "vlans", "users", "groups", "requests"] 
+               valid controller values = ["sections", "subnets", "addresses", "vlans", "users", "groups", "requests"]
             method - string method name
                 valid method values = ["GET", "POST", "PATCH", "DELETE"]
         Returns
@@ -110,7 +110,7 @@ class PHPIPAM:
             {
                 "success":true,
                 "data": [{...}, ...]
-            }                            
+            }
         """
         data = {"controller": controller}
         data.update(kwargs)

@@ -16,11 +16,11 @@ from phpipam_api_pythonclient.phpipam import PHPIPAM
 
 ipam = PHPIPAM("phpipam.example.com", "api_id", "api_key")
 
-print ipam.read_devices()
-print ipam.read_devices(id=20)
+print(ipam.read_devices())
+print(ipam.read_devices(id=20))
 
-print ipam.generic(
+print(ipam.generic(
     controller="vlans",
     method="GET"
-)
+))
 ```
